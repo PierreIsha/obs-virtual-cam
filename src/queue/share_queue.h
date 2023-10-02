@@ -25,6 +25,19 @@ enum {
 	ModeVideo2 = 1,
 	ModeVideo3 = 2,
 	ModeVideo4 = 3,
+	// TODO16
+	ModeVideo5 = 6,
+	ModeVideo6 = 7,
+	ModeVideo7 = 8,
+	ModeVideo8 = 9,
+	ModeVideo9 = 10,
+	ModeVideo10 = 11,
+	ModeVideo11 = 12,
+	ModeVideo12 = 13,
+	ModeVideo13 = 14,
+	ModeVideo14 = 15,
+	ModeVideo15 = 16,
+	ModeVideo16 = 17,
 	ModeAudio = 5,
 };
 

@@ -14,6 +14,19 @@ EXTERN_C const GUID CLSID_OBS_VirtualV;
 EXTERN_C const GUID CLSID_OBS_VirtualV2;
 EXTERN_C const GUID CLSID_OBS_VirtualV3;
 EXTERN_C const GUID CLSID_OBS_VirtualV4;
+// TODO16
+EXTERN_C const GUID CLSID_OBS_VirtualV5;
+EXTERN_C const GUID CLSID_OBS_VirtualV6;
+EXTERN_C const GUID CLSID_OBS_VirtualV7;
+EXTERN_C const GUID CLSID_OBS_VirtualV8;
+EXTERN_C const GUID CLSID_OBS_VirtualV9;
+EXTERN_C const GUID CLSID_OBS_VirtualV10;
+EXTERN_C const GUID CLSID_OBS_VirtualV11;
+EXTERN_C const GUID CLSID_OBS_VirtualV12;
+EXTERN_C const GUID CLSID_OBS_VirtualV13;
+EXTERN_C const GUID CLSID_OBS_VirtualV14;
+EXTERN_C const GUID CLSID_OBS_VirtualV15;
+EXTERN_C const GUID CLSID_OBS_VirtualV16;
 
 class CVCamStream;
 
@@ -33,6 +46,19 @@ extern CUnknown * WINAPI CreateInstance(LPUNKNOWN lpunk, HRESULT *phr);
 extern CUnknown * WINAPI CreateInstance2(LPUNKNOWN lpunk, HRESULT *phr);
 extern CUnknown * WINAPI CreateInstance3(LPUNKNOWN lpunk, HRESULT *phr);
 extern CUnknown * WINAPI CreateInstance4(LPUNKNOWN lpunk, HRESULT *phr);
+// TODO16
+extern CUnknown * WINAPI CreateInstance5(LPUNKNOWN lpunk, HRESULT *phr);
+extern CUnknown * WINAPI CreateInstance6(LPUNKNOWN lpunk, HRESULT *phr);
+extern CUnknown * WINAPI CreateInstance7(LPUNKNOWN lpunk, HRESULT *phr);
+extern CUnknown * WINAPI CreateInstance8(LPUNKNOWN lpunk, HRESULT *phr);
+extern CUnknown * WINAPI CreateInstance9(LPUNKNOWN lpunk, HRESULT *phr);
+extern CUnknown * WINAPI CreateInstance10(LPUNKNOWN lpunk, HRESULT *phr);
+extern CUnknown * WINAPI CreateInstance11(LPUNKNOWN lpunk, HRESULT *phr);
+extern CUnknown * WINAPI CreateInstance12(LPUNKNOWN lpunk, HRESULT *phr);
+extern CUnknown * WINAPI CreateInstance13(LPUNKNOWN lpunk, HRESULT *phr);
+extern CUnknown * WINAPI CreateInstance14(LPUNKNOWN lpunk, HRESULT *phr);
+extern CUnknown * WINAPI CreateInstance15(LPUNKNOWN lpunk, HRESULT *phr);
+extern CUnknown * WINAPI CreateInstance16(LPUNKNOWN lpunk, HRESULT *phr);
 
 class CVCam : public CSource
 {
