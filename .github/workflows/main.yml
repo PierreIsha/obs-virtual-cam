@@ -158,7 +158,7 @@ jobs:
       - name: Install NSIS
         working-directory: ${{ github.workspace }}/obs-virtual-cam
         run: |
-          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+          Invoke-Expression "(New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh') -RunAsAdmin"
           scoop bucket add extras
           scoop install nsis
       - name: Build obs-virtualcam installer
