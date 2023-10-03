@@ -192,6 +192,8 @@ jobs:
         id: get_version
         run: |
           echo ::set-env name=TAG_VERSION::${GITHUB_REF/refs\/tags\//}
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - name: 'Create Release'
         id: create_release
         uses: actions/create-release@v1
