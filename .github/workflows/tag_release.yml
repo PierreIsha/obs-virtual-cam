@@ -14,11 +14,13 @@ jobs:
     env:
       QT_VERSION: '5.10.1'
       WINDOWS_DEPS_VERSION: '2017'
-      CMAKE_GENERATOR: "Visual Studio 16 2019"
+      CMAKE_GENERATOR: "Visual Studio 17 2022"
       CMAKE_SYSTEM_VERSION: "10.0"
     steps:
       - name: 'Add msbuild to PATH'
         uses: microsoft/setup-msbuild@v1.0.0
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - name: 'Checkout'
         uses: actions/checkout@v2
         with:
@@ -37,8 +39,10 @@ jobs:
           git fetch --prune --unshallow
           echo ::set-env name=OBS_GIT_BRANCH::$(git rev-parse --abbrev-ref HEAD)
           echo ::set-env name=OBS_GIT_HASH::$(git rev-parse --short HEAD)
-          echo ::set-env name=OBS_GIT_TAG::$(git describe --tags --abbrev=0)
-      - name: 'Checkout last OBS-Studio release (${{ env.OBS_GIT_TAG }})'
+          echo ::set-env name=OBS_GIT_TAG::26.1.2
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+      - name: 'Checkout specific OBS-Studio release (${{ env.OBS_GIT_TAG }})'
         shell: bash
         working-directory: ${{ github.workspace }}/obs-studio
         run: |
@@ -52,6 +56,8 @@ jobs:
           echo ::set-env name=GIT_BRANCH::${{ github.event.pull_request.head.ref }}
           echo ::set-env name=GIT_HASH::$(git rev-parse --short HEAD)
           echo ::set-env name=GIT_TAG::$(git describe --tags --abbrev=0)
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - name: 'Install prerequisite: QT'
         run: |
           curl -kLO https://cdn-fastly.obsproject.com/downloads/Qt_${{ env.QT_VERSION }}.7z -f --retry 5 -C -
@@ -76,7 +82,7 @@ jobs:
         run: |
           mkdir .\build32
           cd .\build32
-          cmake -G "${{ env.CMAKE_GENERATOR }}" -A Win32 -DCMAKE_SYSTEM_VERSION="${{ env.CMAKE_SYSTEM_VERSION }}" -DQTDIR="${{ github.workspace }}\cmbuild\QT\${{ env.QT_VERSION }}\msvc2017" -DDepsPath="${{ github.workspace }}\cmbuild\deps\win32" -DBUILD_CAPTIONS=YES -DCOPIED_DEPENDENCIES=NO -DCOPY_DEPENDENCIES=YES ..
+          cmake -G "${{ env.CMAKE_GENERATOR }}" -A Win32 -DCMAKE_SYSTEM_VERSION="${{ env.CMAKE_SYSTEM_VERSION }}" -DQTDIR="${{ github.workspace }}\cmbuild\QT\${{ env.QT_VERSION }}\msvc2017" -DDepsPath="${{ github.workspace }}\cmbuild\deps\win32" -DBUILD_CAPTIONS=YES -DCOPIED_DEPENDENCIES=NO -DCOPY_DEPENDENCIES=YES -DENABLE_VIRTUALCAM=YES -DVIRTUALCAM_GUID=1C35EB71-B3CJ-4690-8AD9-686XZ5A88036 ..
       - name: 'Build OBS-Studio 32-bit'
         if: steps.build-cache-obs-32.outputs.cache-hit != 'true'
         working-directory: ${{ github.workspace }}/obs-studio
@@ -99,7 +105,7 @@ jobs:
         run: |
           mkdir .\build64
           cd .\build64
-          cmake -G "${{ env.CMAKE_GENERATOR }}" -A x64 -DCMAKE_SYSTEM_VERSION="${{ env.CMAKE_SYSTEM_VERSION }}" -DQTDIR="${{ github.workspace }}\cmbuild\QT\${{ env.QT_VERSION }}\msvc2017_64" -DDepsPath="${{ github.workspace }}\cmbuild\deps\win64" -DBUILD_CAPTIONS=YES -DCOPIED_DEPENDENCIES=NO -DCOPY_DEPENDENCIES=YES ..
+          cmake -G "${{ env.CMAKE_GENERATOR }}" -A x64 -DCMAKE_SYSTEM_VERSION="${{ env.CMAKE_SYSTEM_VERSION }}" -DQTDIR="${{ github.workspace }}\cmbuild\QT\${{ env.QT_VERSION }}\msvc2017_64" -DDepsPath="${{ github.workspace }}\cmbuild\deps\win64" -DBUILD_CAPTIONS=YES -DCOPIED_DEPENDENCIES=NO -DCOPY_DEPENDENCIES=YES -DENABLE_VIRTUALCAM=YES -DVIRTUALCAM_GUID=1C35EB71-B3CJ-4690-8AD9-686XZ5A88036 ..
       - name: 'Build OBS-Studio 64-bit'
         if: steps.build-cache-obs-64.outputs.cache-hit != 'true'
         working-directory: ${{ github.workspace }}/obs-studio
@@ -127,8 +133,10 @@ jobs:
       - name: 'Set release filename'
         shell: bash
         run: |
-          FILENAME="obs-virtualcam-${{ env.GIT_TAG }}-Windows"
+          FILENAME="OBS-Virtualcam-${{ env.GIT_TAG }}-Windows"
           echo "::set-env name=WIN_FILENAME::$FILENAME"
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - name: 'Package obs-virtual-cam'
         working-directory: ${{ github.workspace }}/obs-virtual-cam
         run: |
@@ -152,7 +160,7 @@ jobs:
       - name: Install NSIS
         working-directory: ${{ github.workspace }}/obs-virtual-cam
         run: |
-          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+          iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
           scoop bucket add extras
           scoop install nsis
       - name: Build obs-virtualcam installer
@@ -166,12 +174,13 @@ jobs:
         with:
           name: '${{ env.GIT_TAG }}-Windows'
           path: ${{ github.workspace }}\obs-virtual-cam\release\*.zip
-      - name: 'Publish ${{ env.WIN_FILENAME }}-Installer.exe'
+      - name: 'Publish ${{ env.WIN_FILENAME }}-Windows-Installer.exe'
         if: success()
         uses: actions/upload-artifact@v2-preview
         with:
           name: '${{ env.GIT_TAG }}-Windows-Installer'
           path: ${{ github.workspace }}\obs-virtual-cam\build-package\*.exe
+
           
   make-release:
     name: 'Create and upload release'
