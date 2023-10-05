@@ -166,15 +166,15 @@ jobs:
         run: |
           cd installer
           makensis /DVERSION=${{ env.GIT_TAG }} installer.nsi
-      - name: 'Publish ${{ env.WIN_FILENAME }}.zip'
+      - name: 'Publish obs-virtualcam-${{ env.WIN_FILENAME }}.zip'
         if: success()
         uses: actions/upload-artifact@v2-preview
         with:
-          name: '${{ env.GIT_TAG }}-Windows'
+          name: 'obs-virtualcam-${{ env.GIT_TAG }}-Windows'
           path: ${{ github.workspace }}\obs-virtual-cam\release\*.zip
-      - name: 'Publish ${{ env.WIN_FILENAME }}-Windows-Installer.exe'
+      - name: 'Publish obs-virtualcam-${{ env.WIN_FILENAME }}-Windows-Installer.exe'
         if: success()
         uses: actions/upload-artifact@v2-preview
         with:
-          name: '${{ env.GIT_TAG }}-Windows-Installer'
+          name: 'obs-virtualcam-${{ env.GIT_TAG }}-Windows-Installer'
           path: ${{ github.workspace }}\obs-virtual-cam\build-package\*.exe
