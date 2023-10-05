@@ -43,89 +43,89 @@ CUnknown * WINAPI CreateInstance4(LPUNKNOWN lpunk, HRESULT *phr)
 	return punk;
 }
 // TODO16
-// CUnknown * WINAPI CreateInstance5(LPUNKNOWN lpunk, HRESULT *phr)
-// {
-// 	ASSERT(phr);
-// 	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV5, ModeVideo5);
-// 	return punk;
-// }
+CUnknown * WINAPI CreateInstance5(LPUNKNOWN lpunk, HRESULT *phr)
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV5, ModeVideo5);
+	return punk;
+}
 
-// CUnknown * WINAPI CreateInstance6(LPUNKNOWN lpunk, HRESULT *phr)
-// {
-// 	ASSERT(phr);
-// 	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV6, ModeVideo6);
-// 	return punk;
-// }
+CUnknown * WINAPI CreateInstance6(LPUNKNOWN lpunk, HRESULT *phr)
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV6, ModeVideo6);
+	return punk;
+}
 
-// CUnknown * WINAPI CreateInstance7(LPUNKNOWN lpunk, HRESULT *phr)
-// {
-// 	ASSERT(phr);
-// 	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV7, ModeVideo7);
-// 	return punk;
-// }
+CUnknown * WINAPI CreateInstance7(LPUNKNOWN lpunk, HRESULT *phr)
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV7, ModeVideo7);
+	return punk;
+}
 
-// CUnknown * WINAPI CreateInstance8(LPUNKNOWN lpunk, HRESULT *phr)
-// {
-// 	ASSERT(phr);
-// 	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV8, ModeVideo8);
-// 	return punk;
-// }
+CUnknown * WINAPI CreateInstance8(LPUNKNOWN lpunk, HRESULT *phr)
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV8, ModeVideo8);
+	return punk;
+}
 
-// CUnknown * WINAPI CreateInstance9(LPUNKNOWN lpunk, HRESULT *phr)
-// {
-// 	ASSERT(phr);
-// 	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV9, ModeVideo9);
-// 	return punk;
-// }
+CUnknown * WINAPI CreateInstance9(LPUNKNOWN lpunk, HRESULT *phr)
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV9, ModeVideo9);
+	return punk;
+}
 
-// CUnknown * WINAPI CreateInstance10(LPUNKNOWN lpunk, HRESULT *phr)
-// {
-// 	ASSERT(phr);
-// 	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV10, ModeVideo10);
-// 	return punk;
-// }
+CUnknown * WINAPI CreateInstance10(LPUNKNOWN lpunk, HRESULT *phr)
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV10, ModeVideo10);
+	return punk;
+}
 
-// CUnknown * WINAPI CreateInstance11(LPUNKNOWN lpunk, HRESULT *phr)
-// {
-// 	ASSERT(phr);
-// 	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV11, ModeVideo11);
-// 	return punk;
-// }
+CUnknown * WINAPI CreateInstance11(LPUNKNOWN lpunk, HRESULT *phr)
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV11, ModeVideo11);
+	return punk;
+}
 
-// CUnknown * WINAPI CreateInstance12(LPUNKNOWN lpunk, HRESULT *phr)
-// {
-// 	ASSERT(phr);
-// 	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV12, ModeVideo12);
-// 	return punk;
-// }
+CUnknown * WINAPI CreateInstance12(LPUNKNOWN lpunk, HRESULT *phr)
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV12, ModeVideo12);
+	return punk;
+}
 
-// CUnknown * WINAPI CreateInstance13(LPUNKNOWN lpunk, HRESULT *phr)
-// {
-// 	ASSERT(phr);
-// 	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV13, ModeVideo13);
-// 	return punk;
-// }
+CUnknown * WINAPI CreateInstance13(LPUNKNOWN lpunk, HRESULT *phr)
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV13, ModeVideo13);
+	return punk;
+}
 
-// CUnknown * WINAPI CreateInstance14(LPUNKNOWN lpunk, HRESULT *phr)
-// {
-// 	ASSERT(phr);
-// 	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV14, ModeVideo14);
-// 	return punk;
-// }
+CUnknown * WINAPI CreateInstance14(LPUNKNOWN lpunk, HRESULT *phr)
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV14, ModeVideo14);
+	return punk;
+}
 
-// CUnknown * WINAPI CreateInstance15(LPUNKNOWN lpunk, HRESULT *phr)
-// {
-// 	ASSERT(phr);
-// 	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV15, ModeVideo15);
-// 	return punk;
-// }
+CUnknown * WINAPI CreateInstance15(LPUNKNOWN lpunk, HRESULT *phr)
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV15, ModeVideo15);
+	return punk;
+}
 
-// CUnknown * WINAPI CreateInstance16(LPUNKNOWN lpunk, HRESULT *phr)
-// {
-// 	ASSERT(phr);
-// 	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV16, ModeVideo16);
-// 	return punk;
-// }
+CUnknown * WINAPI CreateInstance16(LPUNKNOWN lpunk, HRESULT *phr)
+{
+	ASSERT(phr);
+	CUnknown *punk = new CVCam(lpunk, phr, CLSID_OBS_VirtualV16, ModeVideo16);
+	return punk;
+}
 
 CVCam::CVCam(LPUNKNOWN lpunk, HRESULT *phr, const GUID id, int mode) :
 CSource(NAME("OBS Virtual CAM"), lpunk, id)
