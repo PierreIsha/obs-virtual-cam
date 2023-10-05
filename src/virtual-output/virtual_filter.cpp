@@ -221,6 +221,19 @@ static obs_properties_t *virtual_filter_properties(void *data)
 	obs_property_list_add_int(cb, "OBS-Camera2", ModeVideo2);
 	obs_property_list_add_int(cb, "OBS-Camera3", ModeVideo3);
 	obs_property_list_add_int(cb, "OBS-Camera4", ModeVideo4);
+	// TODO16
+	obs_property_list_add_int(cb, "OBS-Camera5", ModeVideo5);
+	obs_property_list_add_int(cb, "OBS-Camera6", ModeVideo6);
+	obs_property_list_add_int(cb, "OBS-Camera7", ModeVideo7);
+	obs_property_list_add_int(cb, "OBS-Camera8", ModeVideo8);
+	obs_property_list_add_int(cb, "OBS-Camera9", ModeVideo9);
+	obs_property_list_add_int(cb, "OBS-Camera10", ModeVideo10);
+	obs_property_list_add_int(cb, "OBS-Camera11", ModeVideo11);
+	obs_property_list_add_int(cb, "OBS-Camera12", ModeVideo12);
+	obs_property_list_add_int(cb, "OBS-Camera13", ModeVideo13);
+	obs_property_list_add_int(cb, "OBS-Camera14", ModeVideo14);
+	obs_property_list_add_int(cb, "OBS-Camera15", ModeVideo15);
+	obs_property_list_add_int(cb, "OBS-Camera16", ModeVideo16);
 
 	obs_properties_add_bool(props, S_FLIP, T_FLIP);
 	obs_properties_add_bool(props, S_RATIO, T_RATIO);

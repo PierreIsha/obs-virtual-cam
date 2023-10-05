@@ -42,6 +42,19 @@ VirtualProperties::VirtualProperties(QWidget *parent) :
 	ui->comboBox_target->addItem("OBS-Camera2", ModeVideo2);
 	ui->comboBox_target->addItem("OBS-Camera3", ModeVideo3);
 	ui->comboBox_target->addItem("OBS-Camera4", ModeVideo4);
+	// TODO16
+	ui->comboBox_target->addItem("OBS-Camera5", ModeVideo5);
+	ui->comboBox_target->addItem("OBS-Camera6", ModeVideo6);
+	ui->comboBox_target->addItem("OBS-Camera7", ModeVideo7);
+	ui->comboBox_target->addItem("OBS-Camera8", ModeVideo8);
+	ui->comboBox_target->addItem("OBS-Camera9", ModeVideo9);
+	ui->comboBox_target->addItem("OBS-Camera10", ModeVideo10);
+	ui->comboBox_target->addItem("OBS-Camera11", ModeVideo11);
+	ui->comboBox_target->addItem("OBS-Camera12", ModeVideo12);
+	ui->comboBox_target->addItem("OBS-Camera13", ModeVideo13);
+	ui->comboBox_target->addItem("OBS-Camera14", ModeVideo14);
+	ui->comboBox_target->addItem("OBS-Camera15", ModeVideo15);
+	ui->comboBox_target->addItem("OBS-Camera16", ModeVideo16);
 	ui->comboBox_target->setCurrentIndex(
 		ui->comboBox_target->findData(target));
 	ui->spinBox->setValue(delay);
