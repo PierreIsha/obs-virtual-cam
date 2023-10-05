@@ -30,7 +30,7 @@ regsvr32 /u "C:\Program Files\obs-studio\bin\32bit\obs-virtualsource.dll"
 ```
 
 # Register specific number of virtual cameras
-Unregister then register 2 directshow camera (up to 4)
+Unregister then register 2 directshow camera (up to 16)
 ```
 regsvr32 /u "C:\Program Files\obs-studio\bin\64bit\obs-virtualsource.dll" 
 regsvr32 /n /i:"2" "C:\Program Files\obs-studio\bin\64bit\obs-virtualsource.dll"

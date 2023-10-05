@@ -79,6 +79,18 @@ Function VirtualDeviceSelection
 		${NSD_CB_AddString} $VirtualDeviceNum "2"
 		${NSD_CB_AddString} $VirtualDeviceNum "3"
 		${NSD_CB_AddString} $VirtualDeviceNum "4"
+		${NSD_CB_AddString} $VirtualDeviceNum "5"
+		${NSD_CB_AddString} $VirtualDeviceNum "6"
+		${NSD_CB_AddString} $VirtualDeviceNum "7"
+		${NSD_CB_AddString} $VirtualDeviceNum "8"
+		${NSD_CB_AddString} $VirtualDeviceNum "9"
+		${NSD_CB_AddString} $VirtualDeviceNum "10"
+		${NSD_CB_AddString} $VirtualDeviceNum "11"
+		${NSD_CB_AddString} $VirtualDeviceNum "12"
+		${NSD_CB_AddString} $VirtualDeviceNum "13"
+		${NSD_CB_AddString} $VirtualDeviceNum "14"
+		${NSD_CB_AddString} $VirtualDeviceNum "15"
+		${NSD_CB_AddString} $VirtualDeviceNum "16"
 		${NSD_CB_SelectString} $VirtualDeviceNum "1"
 
 	nsDialogs::Show
