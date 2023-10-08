@@ -67,12 +67,16 @@ void shared_queue_write_close(share_queue* q)
 bool shared_queue_push_video(share_queue* q, uint32_t* linesize, 
 	uint32_t width, uint32_t height, uint8_t** data, uint64_t timestamp)
 {
+	blog(LOG_INFO, "shared_queue_push_video(%d, %d, %d, %d, %d, %d)", q, linesize, width, height, data, timestamp);
 	if (!q || !q->header)
 		return false;
 
+	blog(LOG_INFO, "shared_queue_push_video : get_frame_header");
 	frame_header* frame = get_frame_header(q->header, q->index);
 	uint8_t* dst = (uint8_t*)frame + q->header->element_header_size;
 	int planes = 0;
+
+	blog(LOG_INFO, "shared_queue_push_video : q->header->format = %d", q->header->format);
 	
 	switch (q->header->format) {
 	case AV_PIX_FMT_NONE:

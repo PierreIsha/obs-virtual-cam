@@ -54,14 +54,21 @@ static void *virtual_filter_create(obs_data_t *settings, obs_source_t *context)
 
 static void virtual_filter_video(void *param, float seconds)
 {
+	blog(LOG_INFO, "virtual_filter_video(%d, %d)", param, seconds);
+	
 	virtual_filter_data* filter = (virtual_filter_data*)param;
 	obs_source_t* target = obs_filter_get_target(filter->context);
+
+	blog(LOG_INFO, "virtual_filter_video target = %d", target);
+
 	uint8_t* video_data;
 	uint32_t linesize;
 	uint32_t width = obs_source_get_width(target);
 	uint32_t height = obs_source_get_height(target);
 	uint64_t time = os_gettime_ns();
 	struct vec4 background;
+
+	blog(LOG_INFO, "virtual_filter_video height = %d wigth = %d ", height, width);
 
 	if (!target)
 		return;
