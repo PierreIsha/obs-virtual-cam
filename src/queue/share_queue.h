@@ -9,6 +9,19 @@
 #define MAPPING_NAMEV2 "OBSVirtualVideo2"
 #define MAPPING_NAMEV3 "OBSVirtualVideo3"
 #define MAPPING_NAMEV4 "OBSVirtualVideo4"
+// TODO16
+#define MAPPING_NAMEV5 "OBSVirtualVideo5"
+#define MAPPING_NAMEV6 "OBSVirtualVideo6"
+#define MAPPING_NAMEV7 "OBSVirtualVideo7"
+#define MAPPING_NAMEV8 "OBSVirtualVideo8"
+#define MAPPING_NAMEV9 "OBSVirtualVideo9"
+#define MAPPING_NAMEV10 "OBSVirtualVideo10"
+#define MAPPING_NAMEV11 "OBSVirtualVideo11"
+#define MAPPING_NAMEV12 "OBSVirtualVideo12"
+#define MAPPING_NAMEV13 "OBSVirtualVideo13"
+#define MAPPING_NAMEV14 "OBSVirtualVideo14"
+#define MAPPING_NAMEV15 "OBSVirtualVideo15"
+#define MAPPING_NAMEV16 "OBSVirtualVideo16"
 #define MAPPING_NAMEA  "OBSVirtualAudio"
 
 typedef signed char        int8_t;
@@ -86,6 +99,19 @@ inline char* get_mapping_name(int mode)
 		case ModeVideo2:   return MAPPING_NAMEV2;
 		case ModeVideo3:   return MAPPING_NAMEV3;
 		case ModeVideo4:   return MAPPING_NAMEV4;
+		// TODO16
+		case ModeVideo5:   return MAPPING_NAMEV5;
+		case ModeVideo6:   return MAPPING_NAMEV6;
+		case ModeVideo7:   return MAPPING_NAMEV7;
+		case ModeVideo8:   return MAPPING_NAMEV8;
+		case ModeVideo9:   return MAPPING_NAMEV8;
+		case ModeVideo10:   return MAPPING_NAMEV10;
+		case ModeVideo11:   return MAPPING_NAMEV11;
+		case ModeVideo12:   return MAPPING_NAMEV12;
+		case ModeVideo13:   return MAPPING_NAMEV13;
+		case ModeVideo14:   return MAPPING_NAMEV14;
+		case ModeVideo15:   return MAPPING_NAMEV15;
+		case ModeVideo16:   return MAPPING_NAMEV16;
 		case ModeAudio:    return MAPPING_NAMEA;
 		default:           return NULL;
 	}
